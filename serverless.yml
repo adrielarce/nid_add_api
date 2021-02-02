@@ -44,3 +44,8 @@ functions:
           path: nid
           method: post
           authorizer: aws_iam
+          cors: true
+
+resources:
+  # API Gateway Errors
+    - ${file(resources/api-gateway-errors.yml)}
