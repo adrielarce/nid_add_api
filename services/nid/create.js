@@ -14,6 +14,19 @@ export const main = handler(async (event, context) => {
             nid: uuidv4(), // A unique uuid
             added: Date.now(),
             type: data.type,
+            retrieve_method: "ManualSubmit",
+            source: data.editorID,
+            article_url: data.sourceURL,
+            article_domain: data.sourceDomain,
+            authors: data.authors,
+            categories_submitted: data.categories,
+            keywords_submitted: data.keywords,
+            stocks: data.stocks,
+            picture: data.imageURL,
+            title: data.title,
+            cta: data.cta,
+            summary: data.summary,
+            html_content: data.html
         },
     };
     await dynamoDb.put(params);
