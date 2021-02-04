@@ -8,7 +8,7 @@ export default class DynamoDBStack extends sst.Stack {
         const app = this.node.root;
         const table = new dynamodb.Table(this, "Table", {
             billingMode: dynamodb.BillingMode.PAY_PER_REQUEST, // Use on-demand billing mode
-            sortKey: { name: "added", type: dynamodb.AttributeType.STRING },
+            sortKey: { name: "added", type: dynamodb.AttributeType.NUMBER },
             partitionKey: { name: "nid", type: dynamodb.AttributeType.STRING },
         });
         // Output values
